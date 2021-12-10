@@ -108,7 +108,7 @@ uint8_t onewireReadBit( volatile uint8_t *port, volatile uint8_t *direction, vol
 	*port &= ~mask; //Write 0 to output
 	_delay_us( 2 );
 	*direction &= ~mask; //Set port to input
-	_delay_us( 5 );
+	_delay_us( 15 );
 	bit = ( ( *portin & mask ) != 0 ); //Read input
 	_delay_us( 60 );
 	SREG = sreg;
